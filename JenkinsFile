@@ -1,9 +1,28 @@
 pipeline{
 	agent{ label 'linux'}
+	tools{
+		maven 'M3'
+	}
 	stages{
-		stage('Hello from github'){
+		stage('checkout'){
 			steps{
-				echo "Hello World"
+				git 'https://github.com/gunaseelanDuraisamy/Demo.git'
+			}
+		}
+		stage('Build'){
+			steps{
+				bat 'mvn clean compile'
+			}
+		}
+		stage('Test'){
+			steps{
+				bat 'mvn test'
+				junit '**/target/surfire-reports/Test-*.xml'
+			}
+		}
+		stage('Package'){
+			steps{
+			 	bat 'mvn package'
 			}
 		}
 	}
