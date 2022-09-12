@@ -1,6 +1,6 @@
 pipeline{
 //<<<<<<< HEAD
-	agent{ label 'linux'}
+	agent{ label 'Linux'}
 	tools{
 		maven 'M3'
 	}
