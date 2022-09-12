@@ -5,7 +5,7 @@ pipeline{
 		maven 'M3'
 	}
 //=======
-	agent{ label 'Linux'}
+	//agent{ label 'Linux'}
 //>>>>>>> 9815b71f4bee31c5a643a1a6fb5b889f1a0c7845
 	stages{
 		stage('checkout'){
